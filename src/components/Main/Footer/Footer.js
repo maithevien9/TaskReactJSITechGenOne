@@ -13,21 +13,9 @@ function Footer() {
       <h4>Trường đại học Bách Khoa - đại học Đà Nẵng</h4>
       <h4>Khoa Công Nghệ Thông Tin</h4>
       <div>
-        <img
-          src={icFB}
-          alt="Menu"
-          className="image-wrapper"
-          onClick={(e) => {
-            HandleFb(e);
-          }}
-        />
+        <img src={icFB} className="image-wrapper" onClick={HandleFb} />
 
-        <img
-          src={icYoutube}
-          alt="Menu"
-          className="image-wrapper"
-          onClick={HandleFb}
-        />
+        <img src={icYoutube} className="image-wrapper" onClick={HandleFb} />
       </div>
     </div>
   );
