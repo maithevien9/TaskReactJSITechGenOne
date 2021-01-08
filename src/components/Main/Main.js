@@ -5,10 +5,10 @@ import Menu from "./Menu/Menu";
 import "./Main.scss";
 
 function Main() {
-  const [dataCheckMenu, setdataCheckMenu] = useState(false);
+  const [CheckDataMenu, setCheckDataMenu] = useState(false);
 
   const handleMenu = () => {
-    setdataCheckMenu(!dataCheckMenu);
+    setCheckDataMenu(!CheckDataMenu);
   };
 
   return (
@@ -17,7 +17,7 @@ function Main() {
       <div className="sroll-main-view">
         <div className="main-view-wrapper">
           <h3> </h3>
-          {dataCheckMenu ? <Menu /> : <div></div>}
+          {CheckDataMenu ? <Menu /> : <div></div>}
         </div>
 
         <Footer />
