@@ -26,7 +26,4 @@ function Main() {
   );
 }
 
-let styles = {
-  WrapperMain: {},
-};
 export default Main;
