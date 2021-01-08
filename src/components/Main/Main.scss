@@ -1,0 +1,19 @@
+.WrapperMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.WrapperMainView{
+    height: 2000px;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.WrapperScrollMain{
+    overflow-y: scroll;
+    height: 950px;
+    width: "100%";
+}
