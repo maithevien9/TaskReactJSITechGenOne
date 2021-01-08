@@ -18,10 +18,19 @@
     width: 150px;
 }
 
-.style-text-header{
+.style-text-header {
     font-size: 30px;
     width: 400px;
     margin-left:20px;
+    color: #FFFFFF;
+    border-right: 3px solid #FFFFFF;
+}
+
+.style-text-header2 {
+    font-size: 30px;
+    width: 400px;
+    margin-left:20px;
+    background-color: #000000;
     color: #FFFFFF;
     border-right: 3px solid #FFFFFF;
 }

@@ -47,67 +47,52 @@ function Header(props) {
     <div className="header-wrapper">
       <div className="header-left-wrapper">
         <h1
-          className="style-text-header"
+          className={
+            CheckDataHeaderHTML ? "style-text-header2" : "style-text-header"
+          }
           onClick={HandleOpenHTMLView}
           onMouseEnter={() => HandleCheckDataheaderHTMl(true)}
           onMouseLeave={() => HandleCheckDataheaderHTMl(false)}
-          style={
-            CheckDataHeaderHTML
-              ? styles.wrapperTextHeader1
-              : styles.wrapperTextHeader2
-          }
         >
           HTML
         </h1>
         <h1
-          className="style-text-header"
+          className={
+            CheckDataHeaderCSS ? "style-text-header2" : "style-text-header"
+          }
           onClick={HandleOpenHTMLView}
           onMouseEnter={() => HandleCheckDataheaderCSS(true)}
           onMouseLeave={() => HandleCheckDataheaderCSS(false)}
-          style={
-            CheckDataHeaderCSS
-              ? styles.wrapperTextHeader1
-              : styles.wrapperTextHeader2
-          }
         >
           CSS
         </h1>
         <h1
-          className="style-text-header"
+          className={
+            CheckDataHeaderRuby ? "style-text-header2" : "style-text-header"
+          }
           onClick={HandleOpenHTMLView}
           onMouseEnter={() => HandleCheckDataheaderRuby(true)}
           onMouseLeave={() => HandleCheckDataheaderRuby(false)}
-          style={
-            CheckDataHeaderRuby
-              ? styles.wrapperTextHeader1
-              : styles.wrapperTextHeader2
-          }
         >
           Ruby
         </h1>
         <h1
-          className="style-text-header"
+          className={
+            CheckDataHeaderPHP ? "style-text-header2" : "style-text-header"
+          }
           onClick={HandleOpenHTMLView}
           onMouseEnter={() => HandleCheckDataheaderPHP(true)}
           onMouseLeave={() => HandleCheckDataheaderPHP(false)}
-          style={
-            CheckDataHeaderPHP
-              ? styles.wrapperTextHeader1
-              : styles.wrapperTextHeader2
-          }
         >
           PHP
         </h1>
         <h1
-          className="style-text-header"
+          className={
+            CheckDataHeaderPython ? "style-text-header2" : "style-text-header"
+          }
           onClick={HandleOpenHTMLView}
           onMouseEnter={() => HandleCheckDataheaderPython(true)}
           onMouseLeave={() => HandleCheckDataheaderPython(false)}
-          style={
-            CheckDataHeaderPython
-              ? styles.wrapperTextHeader1
-              : styles.wrapperTextHeader2
-          }
         >
           Python
         </h1>
@@ -123,12 +108,5 @@ function Header(props) {
     </div>
   );
 }
-let styles = {
-  wrapperTextHeader1: {
-    backgroundColor: "#000000",
-  },
-  wrapperTextHeader2: {
-    backgroundColor: "#2E475C",
-  },
-};
+
 export default Header;
