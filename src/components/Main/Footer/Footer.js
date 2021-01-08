@@ -3,23 +3,33 @@ import "./Footer.scss";
 import icFB from "../../../Images/icFB.png";
 import icYoutube from "../../../Images/icYoutube.png";
 function Footer() {
-  const HandleFb = () => {};
+  const HandleFb = (e) => {
+    e.preventDefault();
+    window.location.href = "http://google.com";
+  };
+
   return (
-    <div className="WrapperFooter">
+    <div className="footer-wrapper">
       <h4>Trường đại học Bách Khoa - đại học Đà Nẵng</h4>
       <h4>Khoa Công Nghệ Thông Tin</h4>
       <div>
         <img
           src={icFB}
           alt="Menu"
-          className="wrapperImage"
+          className="image-wrapper"
           onClick={(e) => {
-            e.preventDefault();
-            window.location.href = "http://google.com";
+            HandleFb(e);
           }}
         />
 
-        <img src={icYoutube} alt="Menu" className="wrapperImage" />
+        <img
+          src={icYoutube}
+          alt="Menu"
+          className="image-wrapper"
+          onClick={(e) => {
+            HandleFb(e);
+          }}
+        />
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ function HTML(props) {
     handleCloseHTMLView();
   };
   return (
-    <div className="wrapperViewHTML">
+    <div className="view-html-wrapper">
       <div onClick={HandleClose}>X</div>
     </div>
   );

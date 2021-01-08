@@ -1,46 +1,43 @@
-.WrapperHeader{
+.header-wrapper{
     height: 100px;
     width: 100%;
     background-color: #2E475C;
     display: flex;
     justify-content: space-between;
     align-items: center;
-     padding: 0% 0% 0% 5%;
+    padding: 0% 0% 0% 5%;
 }
-.warpperHeaderLeft{
+.header-left-wrapper{
     display: flex;
     justify-content: space-around;
     width: 50%;
-    
-   
 }
-.warpperHeaderRight{
+.header-right-wrapper{
     width: 15%;
 }
-.styleTextHeader{
+.style-text-header{
     font-size: 30px;
-    width: 15%;
-    color: white;
-    border-right: 3px solid white;
+    width: 150px;
+    color: #FFFFFF;
+    border-right: 3px solid #FFFFFF;
 }
-.styleTextHeaderRight{
+.style-text-header-right{
     font-size: 30px;
-    width: 20%;
-    color: white;
-    border-right-width:  1px;
-    
+    width: 200px;
+    color: #FFFFFF;
+    border-right-width: 1px; 
 }
-.wrapperImageHeader{
+.image-header-wrapper{
     height: 40px;
     width: 40px;
 }
-.ModalHTML{
-  height: 80%;
-  width: 50%;
+.modal-html{
+  height: 800px;
+  width: 500px;
   background-color: #ffffff;
   overflow: auto;
-  margin-left: 25%;
-  margin-top: 5%;
-  border: 1px solid black;
+  margin-left: 250px;
+  margin-top: 50px;
+  border: 1px solid #000000;
   outline: none;
 }

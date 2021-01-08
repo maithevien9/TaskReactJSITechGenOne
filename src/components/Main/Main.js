@@ -9,10 +9,10 @@ function Main() {
     setdataCheckMenu(!dataCheckMenu);
   };
   return (
-    <div className="WrapperMain">
+    <div className="main-wrapper">
       <Header handleMenu={handleMenu} />
-      <div className="WrapperScrollMain">
-        <div className="WrapperMainView">
+      <div className="sroll-main-view">
+        <div className="main-view-wrapper">
           <h3> </h3>
 
           {dataCheckMenu ? <Menu /> : <div></div>}
