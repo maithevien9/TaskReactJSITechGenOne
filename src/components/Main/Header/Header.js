@@ -11,25 +11,36 @@ Header.propTypes = {
 Header.Authenication = {
   handleMenu: null,
 };
+
 function Header(props) {
   const { handleMenu } = props;
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [DataCheckBtnheaderHTML, setDataCheckBtnheaderHTML] = useState(false);
-  const [DataCheckBtnheaderCSS, setDataCheckBtnheaderCSS] = useState(false);
-  const [DataCheckBtnheaderRuby, setDataCheckBtnheaderRuby] = useState(false);
-  const [DataCheckBtnheaderPHP, setDataCheckBtnheaderPHP] = useState(false);
-  const [DataCheckBtnheaderPython, setDataCheckBtnheaderPython] = useState(
-    false
-  );
-  const [DataCheckBtnheaderMenu, setDataCheckBtnheaderMenu] = useState(false);
-  const [dataCheckMenu, setdataCheckMenu] = useState(false);
+  const [CheckDataHeaderHTML, setCheckDataHeaderHTML] = useState(false);
+  const [CheckDataHeaderCSS, setCheckDataHeaderCSS] = useState(false);
+  const [CheckDataHeaderRuby, setCheckDataHeaderRuby] = useState(false);
+  const [CheckDataHeaderPHP, setCheckDataHeaderPHP] = useState(false);
+  const [CheckDataHeaderPython, setCheckDataHeaderPython] = useState(false);
 
-  const showMenu = () => setdataCheckMenu(!dataCheckMenu);
   const handleCloseHTMLView = () => {
     setModalIsOpen(false);
   };
   const HandleOpenHTMLView = () => {
     setModalIsOpen(true);
+  };
+  const HandleCheckDataheaderHTMl = (data) => {
+    setCheckDataHeaderHTML(data);
+  };
+  const HandleCheckDataheaderCSS = (data) => {
+    setCheckDataHeaderCSS(data);
+  };
+  const HandleCheckDataheaderRuby = (data) => {
+    setCheckDataHeaderRuby(data);
+  };
+  const HandleCheckDataheaderPHP = (data) => {
+    setCheckDataHeaderPHP(data);
+  };
+  const HandleCheckDataheaderPython = (data) => {
+    setCheckDataHeaderPython(data);
   };
 
   return (
@@ -38,10 +49,10 @@ function Header(props) {
         <h1
           className="style-text-header"
           onClick={HandleOpenHTMLView}
-          onMouseEnter={() => setDataCheckBtnheaderHTML(true)}
-          onMouseLeave={() => setDataCheckBtnheaderHTML(false)}
+          onMouseEnter={() => HandleCheckDataheaderHTMl(true)}
+          onMouseLeave={() => HandleCheckDataheaderHTMl(false)}
           style={
-            DataCheckBtnheaderHTML
+            CheckDataHeaderHTML
               ? styles.wrapperTextHeader1
               : styles.wrapperTextHeader2
           }
@@ -51,10 +62,10 @@ function Header(props) {
         <h1
           className="style-text-header"
           onClick={HandleOpenHTMLView}
-          onMouseEnter={() => setDataCheckBtnheaderCSS(true)}
-          onMouseLeave={() => setDataCheckBtnheaderCSS(false)}
+          onMouseEnter={() => HandleCheckDataheaderCSS(true)}
+          onMouseLeave={() => HandleCheckDataheaderCSS(false)}
           style={
-            DataCheckBtnheaderCSS
+            CheckDataHeaderCSS
               ? styles.wrapperTextHeader1
               : styles.wrapperTextHeader2
           }
@@ -64,10 +75,10 @@ function Header(props) {
         <h1
           className="style-text-header"
           onClick={HandleOpenHTMLView}
-          onMouseEnter={() => setDataCheckBtnheaderRuby(true)}
-          onMouseLeave={() => setDataCheckBtnheaderRuby(false)}
+          onMouseEnter={() => HandleCheckDataheaderRuby(true)}
+          onMouseLeave={() => HandleCheckDataheaderRuby(false)}
           style={
-            DataCheckBtnheaderRuby
+            CheckDataHeaderRuby
               ? styles.wrapperTextHeader1
               : styles.wrapperTextHeader2
           }
@@ -77,10 +88,10 @@ function Header(props) {
         <h1
           className="style-text-header"
           onClick={HandleOpenHTMLView}
-          onMouseEnter={() => setDataCheckBtnheaderPHP(true)}
-          onMouseLeave={() => setDataCheckBtnheaderPHP(false)}
+          onMouseEnter={() => HandleCheckDataheaderPHP(true)}
+          onMouseLeave={() => HandleCheckDataheaderPHP(false)}
           style={
-            DataCheckBtnheaderPHP
+            CheckDataHeaderPHP
               ? styles.wrapperTextHeader1
               : styles.wrapperTextHeader2
           }
@@ -90,10 +101,10 @@ function Header(props) {
         <h1
           className="style-text-header"
           onClick={HandleOpenHTMLView}
-          onMouseEnter={() => setDataCheckBtnheaderPython(true)}
-          onMouseLeave={() => setDataCheckBtnheaderPython(false)}
+          onMouseEnter={() => HandleCheckDataheaderPython(true)}
+          onMouseLeave={() => HandleCheckDataheaderPython(false)}
           style={
-            DataCheckBtnheaderPython
+            CheckDataHeaderPython
               ? styles.wrapperTextHeader1
               : styles.wrapperTextHeader2
           }

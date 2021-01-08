@@ -1,9 +1,10 @@
-.main-wrapper{
+.main-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.main-view-wrapper{
+
+.main-view-wrapper {
     height: 900px;
     width: 100%;
     background-color: #FFFFFF;
@@ -11,8 +12,8 @@
     display: flex;
     justify-content: space-between;
 }
-.sroll-main-view{
+
+.sroll-main-view {
     overflow-y: scroll;
     height: 950px;
-    width: "100%";
 }

@@ -1,4 +1,4 @@
-.header-wrapper{
+.header-wrapper {
     height: 100px;
     width: 100%;
     background-color: #2E475C;
@@ -7,31 +7,38 @@
     align-items: center;
     padding: 0 0 0 50px;
 }
-.header-left-wrapper{
+
+.header-left-wrapper {
     display: flex;
     justify-content: space-around;
-    width: 500px;
+    width: 800px;
 }
-.header-right-wrapper{
+
+.header-right-wrapper {
     width: 150px;
 }
+
 .style-text-header{
     font-size: 30px;
-    width: 150px;
+    width: 400px;
+    margin-left:20px;
     color: #FFFFFF;
     border-right: 3px solid #FFFFFF;
 }
-.style-text-header-right{
+
+.style-text-header-right {
     font-size: 30px;
     width: 200px;
     color: #FFFFFF;
     border-right-width: 1px; 
 }
-.image-header-wrapper{
+
+.image-header-wrapper {
     height: 40px;
     width: 40px;
 }
-.modal-html{
+
+.modal-html {
   height: 800px;
   width: 500px;
   background-color: #ffffff;

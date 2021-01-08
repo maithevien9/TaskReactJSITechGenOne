@@ -2,9 +2,9 @@ import React from "react";
 import "./Footer.scss";
 import icFB from "../../../Images/icFB.png";
 import icYoutube from "../../../Images/icYoutube.png";
+
 function Footer() {
   const HandleFb = (e) => {
-    e.preventDefault();
     window.location.href = "http://google.com";
   };
 
@@ -26,9 +26,7 @@ function Footer() {
           src={icYoutube}
           alt="Menu"
           className="image-wrapper"
-          onClick={(e) => {
-            HandleFb(e);
-          }}
+          onClick={HandleFb}
         />
       </div>
     </div>
