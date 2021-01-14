@@ -1,5 +1,5 @@
 .header-wrapper {
-    height: 100px;
+    height: 60px;
     width: 100%;
     background-color: #2E475C;
     display: flex;
@@ -24,15 +24,10 @@
     margin-left:20px;
     color: #FFFFFF;
     border-right: 3px solid #FFFFFF;
-}
 
-.style-text-header2 {
-    font-size: 30px;
-    width: 400px;
-    margin-left:20px;
-    background-color: #000000;
-    color: #FFFFFF;
-    border-right: 3px solid #FFFFFF;
+    &:hover {
+        background-color: #000000;
+    }
 }
 
 .style-text-header-right {

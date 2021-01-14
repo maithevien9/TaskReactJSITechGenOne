@@ -8,18 +8,13 @@ import HTML from "./HTML/HTML";
 Header.propTypes = {
   handleMenu: PropTypes.func,
 };
-Header.Authenication = {
+Header.propTypes = {
   handleMenu: null,
 };
 
 function Header(props) {
   const { handleMenu } = props;
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [CheckDataHeaderHTML, setCheckDataHeaderHTML] = useState(false);
-  const [CheckDataHeaderCSS, setCheckDataHeaderCSS] = useState(false);
-  const [CheckDataHeaderRuby, setCheckDataHeaderRuby] = useState(false);
-  const [CheckDataHeaderPHP, setCheckDataHeaderPHP] = useState(false);
-  const [CheckDataHeaderPython, setCheckDataHeaderPython] = useState(false);
 
   const handleCloseHTMLView = () => {
     setModalIsOpen(false);
@@ -27,73 +22,23 @@ function Header(props) {
   const HandleOpenHTMLView = () => {
     setModalIsOpen(true);
   };
-  const HandleCheckDataheaderHTMl = (data) => {
-    setCheckDataHeaderHTML(data);
-  };
-  const HandleCheckDataheaderCSS = (data) => {
-    setCheckDataHeaderCSS(data);
-  };
-  const HandleCheckDataheaderRuby = (data) => {
-    setCheckDataHeaderRuby(data);
-  };
-  const HandleCheckDataheaderPHP = (data) => {
-    setCheckDataHeaderPHP(data);
-  };
-  const HandleCheckDataheaderPython = (data) => {
-    setCheckDataHeaderPython(data);
-  };
 
   return (
     <div className="header-wrapper">
       <div className="header-left-wrapper">
-        <h1
-          className={
-            CheckDataHeaderHTML ? "style-text-header2" : "style-text-header"
-          }
-          onClick={HandleOpenHTMLView}
-          onMouseEnter={() => HandleCheckDataheaderHTMl(true)}
-          onMouseLeave={() => HandleCheckDataheaderHTMl(false)}
-        >
+        <h1 className="style-text-header" onClick={HandleOpenHTMLView}>
           HTML
         </h1>
-        <h1
-          className={
-            CheckDataHeaderCSS ? "style-text-header2" : "style-text-header"
-          }
-          onClick={HandleOpenHTMLView}
-          onMouseEnter={() => HandleCheckDataheaderCSS(true)}
-          onMouseLeave={() => HandleCheckDataheaderCSS(false)}
-        >
+        <h1 className="style-text-header" onClick={HandleOpenHTMLView}>
           CSS
         </h1>
-        <h1
-          className={
-            CheckDataHeaderRuby ? "style-text-header2" : "style-text-header"
-          }
-          onClick={HandleOpenHTMLView}
-          onMouseEnter={() => HandleCheckDataheaderRuby(true)}
-          onMouseLeave={() => HandleCheckDataheaderRuby(false)}
-        >
+        <h1 className="style-text-header" onClick={HandleOpenHTMLView}>
           Ruby
         </h1>
-        <h1
-          className={
-            CheckDataHeaderPHP ? "style-text-header2" : "style-text-header"
-          }
-          onClick={HandleOpenHTMLView}
-          onMouseEnter={() => HandleCheckDataheaderPHP(true)}
-          onMouseLeave={() => HandleCheckDataheaderPHP(false)}
-        >
+        <h1 className="style-text-header" onClick={HandleOpenHTMLView}>
           PHP
         </h1>
-        <h1
-          className={
-            CheckDataHeaderPython ? "style-text-header2" : "style-text-header"
-          }
-          onClick={HandleOpenHTMLView}
-          onMouseEnter={() => HandleCheckDataheaderPython(true)}
-          onMouseLeave={() => HandleCheckDataheaderPython(false)}
-        >
+        <h1 className="style-text-header" onClick={HandleOpenHTMLView}>
           Python
         </h1>
       </div>
