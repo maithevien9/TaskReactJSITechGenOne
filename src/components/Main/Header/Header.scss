@@ -3,9 +3,9 @@
     width: 100%;
     background-color: #2E475C;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 0 0 0 50px;
+    margin: 0;
 }
 
 .header-left-wrapper {
@@ -15,7 +15,7 @@
 }
 
 .header-right-wrapper {
-    width: 150px;
+    width: 50px;
 }
 
 .style-text-header {
@@ -32,7 +32,7 @@
 
 .style-text-header-right {
     font-size: 30px;
-    width: 200px;
+    width: 50px;
     color: #FFFFFF;
     border-right-width: 1px; 
 }

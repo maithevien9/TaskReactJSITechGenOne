@@ -42,6 +42,7 @@ function Header(props) {
           Python
         </h1>
       </div>
+      <div></div>
       <div className="header-right-wrapper">
         <h1 className="style-text-header-right" onClick={handleMenu}>
           <img src={icMenu} alt="Menu" className="image-header-wrapper" />
