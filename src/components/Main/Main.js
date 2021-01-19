@@ -3,7 +3,7 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Menu from './Menu/Menu';
 import './Main.scss';
-import getMovies from '../../config/API/get-movies-api';
+import getStudents from '../../config/API/get-students-api';
 
 function Main() {
 	const [ CheckDataMenu, setCheckDataMenu ] = useState(false);
@@ -13,14 +13,14 @@ function Main() {
 	};
 	useEffect(() => {
 		async function FuncGetMovies() {
-			getMovies()
+			getStudents()
 				.then((json) => {
 					console.log(json);
 				})
 				.catch((error) => console.log(error));
 
 			//cach2
-			//  await fetch('https://reactnative.dev/movies.json')
+			//  await fetch('http://localhost:8080/api/students')
 			// .then((response) => response.json())
 			// .then((json) => console.log(json))
 			// .catch((error) => console.error(error))
