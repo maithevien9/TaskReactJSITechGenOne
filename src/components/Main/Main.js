@@ -3,9 +3,12 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Menu from './Menu/Menu';
 import './Main.scss';
+import { useTranslation } from 'react-i18next';
 import getStudents from '../../config/API/get-students-api';
 import postStudents from '../../config/API/post-students-api';
+
 function Main() {
+	const { t, i18n } = useTranslation();
 	const [ CheckDataMenu, setCheckDataMenu ] = useState(false);
 	const [ dataStudents, setDataStudents ] = useState([]);
 	const [ name, setName ] = useState('');
@@ -45,6 +48,12 @@ function Main() {
 			})
 			.catch((error) => console.log(error));
 	}
+	function handleChangeLanguageEN() {
+		i18n.changeLanguage('en');
+	}
+	function handleChangeLanguageVn() {
+		i18n.changeLanguage('vn');
+	}
 
 	return (
 		<div className="main-wrapper">
@@ -52,6 +61,9 @@ function Main() {
 			<div className="sroll-main-view">
 				<div className="main-view-wrapper">
 					<div>
+						<h1>{t('Hello')}</h1>
+						<button onClick={handleChangeLanguageEN}>english</button>
+						<button onClick={handleChangeLanguageVn}>vietnamese</button>
 						{dataStudents != null ? (
 							dataStudents.map((e) => (
 								<div key={e.id}>
@@ -72,7 +84,6 @@ function Main() {
 						</div>
 
 						<button onClick={handleAddStudent}>Add Student</button>
-						<h5>{process.env.REACT_APP_URL_IP}2</h5>
 					</div>
 					{CheckDataMenu ? <Menu /> : <div />}
 				</div>
