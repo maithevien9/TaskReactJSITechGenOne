@@ -1,9 +1,19 @@
-const getStudents = async () => {
+const PostStudents = async (name, age) => {
 	const { REACT_APP_URL } = process.env;
 	var url = `http://${REACT_APP_URL}:8080/api/students`;
-	return await fetch(url)
-	.then(checkStatus)
-	.then((response) => response.json());
+	return await fetch(url, {
+		method: 'POST',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			name: name,
+			age: age
+		})
+	})
+		.then(checkStatus)
+		.then((response) => response.json());
 };
 
 function checkStatus(response) {
@@ -17,4 +27,4 @@ function checkStatus(response) {
 	throw error;
 }
 
-export default getStudents;
+export default PostStudents;

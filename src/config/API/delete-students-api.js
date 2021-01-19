@@ -1,9 +1,15 @@
-const getStudents = async () => {
+const DeleteStudent = async (id) => {
 	const { REACT_APP_URL } = process.env;
-	var url = `http://${REACT_APP_URL}:8080/api/students`;
-	return await fetch(url)
-	.then(checkStatus)
-	.then((response) => response.json());
+	var url = `http://${REACT_APP_URL}:8080/api/students/${id}`;
+	return await fetch(url, {
+		method: 'DELETE',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json'
+		}
+	})
+		.then(checkStatus)
+		.then((response) => response.json());
 };
 
 function checkStatus(response) {
@@ -17,4 +23,4 @@ function checkStatus(response) {
 	throw error;
 }
 
-export default getStudents;
+export default DeleteStudent;
