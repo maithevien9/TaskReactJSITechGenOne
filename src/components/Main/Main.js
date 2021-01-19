@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Menu from './Menu/Menu';
@@ -6,33 +6,40 @@ import './Main.scss';
 import { useTranslation } from 'react-i18next';
 import getStudents from '../../config/API/get-students-api';
 import postStudents from '../../config/API/post-students-api';
+import { setStudent } from '../../config/Redux/ActionCreators';
+import { connect } from 'react-redux';
 
-function Main() {
+function Main(props) {
 	const { t, i18n } = useTranslation();
 	const [ CheckDataMenu, setCheckDataMenu ] = useState(false);
-	const [ dataStudents, setDataStudents ] = useState([]);
+	// const [ dataStudents, setDataStudents ] = useState([]);
 	const [ name, setName ] = useState('');
 	const [ age, setAge ] = useState('');
+	const value = useContext(React.createContext({ foo: 'bar' }));
 
 	const handleMenu = () => {
 		setCheckDataMenu(!CheckDataMenu);
 	};
-	useEffect(() => {
-		function FuncGetMovies() {
-			getStudents()
-				.then((json) => {
-					setDataStudents(json);
-				})
-				.catch((error) => console.log(error));
+	useEffect(
+		() => {
+			function FuncGetMovies() {
+				getStudents()
+					.then((json) => {
+						// setDataStudents(json);
+						props.setStudent(json);
+					})
+					.catch((error) => console.log(error));
 
-			//cach2
-			//  await fetch('http://localhost:8080/api/students')
-			// .then((response) => response.json())
-			// .then((json) => console.log(json))
-			// .catch((error) => console.error(error))
-		}
-		FuncGetMovies();
-	}, []);
+				//cach2
+				//  await fetch('http://localhost:8080/api/students')
+				// .then((response) => response.json())
+				// .then((json) => console.log(json))
+				// .catch((error) => console.error(error))
+			}
+			FuncGetMovies();
+		},
+		[ props ]
+	);
 
 	function handleTextName(e) {
 		setName(e.target.value);
@@ -44,12 +51,13 @@ function Main() {
 		postStudents(name, age)
 			.then((json) => {
 				console.log(json);
-				setDataStudents(dataStudents.concat(json));
+				// setDataStudents(dataStudents.concat(json));
 			})
 			.catch((error) => console.log(error));
 	}
 	function handleChangeLanguageEN() {
 		i18n.changeLanguage('en');
+		console.log(value);
 	}
 	function handleChangeLanguageVn() {
 		i18n.changeLanguage('vn');
@@ -58,14 +66,15 @@ function Main() {
 	return (
 		<div className="main-wrapper">
 			<Header handleMenu={handleMenu} />
+
 			<div className="sroll-main-view">
 				<div className="main-view-wrapper">
 					<div>
 						<h1>{t('Hello')}</h1>
 						<button onClick={handleChangeLanguageEN}>english</button>
 						<button onClick={handleChangeLanguageVn}>vietnamese</button>
-						{dataStudents != null ? (
-							dataStudents.map((e) => (
+						{props.StudentReducer != null ? (
+							props.StudentReducer.map((e) => (
 								<div key={e.id}>
 									<h5>{e.name}</h5>
 									<h5>{e.age}</h5>
@@ -94,4 +103,9 @@ function Main() {
 	);
 }
 
-export default Main;
+function mapStateToProps(state) {
+	return {
+		StudentReducer: state.StudentReducer
+	};
+}
+export default connect(mapStateToProps, { setStudent })(Main);
