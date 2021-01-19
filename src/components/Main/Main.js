@@ -3,7 +3,7 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Menu from './Menu/Menu';
 import './Main.scss';
-import getMovies from '../../Assets/API/get-movies-api';
+import getMovies from '../../config/API/get-movies-api';
 
 function Main() {
 	const [ CheckDataMenu, setCheckDataMenu ] = useState(false);
@@ -12,17 +12,18 @@ function Main() {
 		setCheckDataMenu(!CheckDataMenu);
 	};
 	useEffect(() => {
-		async function FuncGetMovies () {
-				getMovies().then((json) => {
+		async function FuncGetMovies() {
+			getMovies()
+				.then((json) => {
 					console.log(json);
 				})
-        .catch((error) => console.log(error));
+				.catch((error) => console.log(error));
 
-      //cach2
-      //  await fetch('https://reactnative.dev/movies.json')
-      // .then((response) => response.json())
-      // .then((json) => console.log(json))
-      // .catch((error) => console.error(error))
+			//cach2
+			//  await fetch('https://reactnative.dev/movies.json')
+			// .then((response) => response.json())
+			// .then((json) => console.log(json))
+			// .catch((error) => console.error(error))
 		}
 		FuncGetMovies();
 	}, []);

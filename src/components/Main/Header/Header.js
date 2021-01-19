@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import './Header.scss';
-import icMenu from '../../../Images/icMenu.png';
+import icMenu from '../../../Assets/Images/icMenu.png';
 import HTML from './HTML/HTML';
 
 function Header(props) {

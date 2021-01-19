@@ -1,5 +1,5 @@
 const getMovies = async () => {
-	var url = `https://reactnative.dev/movies.json`;
+	var url = `http://localhost:8080/api/students`;
 	return await fetch(url).then((response) => response.json());
 };
 export default getMovies;
