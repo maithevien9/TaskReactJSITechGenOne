@@ -6,13 +6,13 @@ import './Main.scss';
 import { useTranslation } from 'react-i18next';
 import getStudents from '../../config/API/get-students-api';
 import postStudents from '../../config/API/post-students-api';
-import { setStudent } from '../../config/Redux/ActionCreators';
+
 import { connect } from 'react-redux';
 
 function Main(props) {
 	const { t, i18n } = useTranslation();
 	const [ CheckDataMenu, setCheckDataMenu ] = useState(false);
-	// const [ dataStudents, setDataStudents ] = useState([]);
+	const [ dataStudents, setDataStudents ] = useState([]);
 	const [ name, setName ] = useState('');
 	const [ age, setAge ] = useState('');
 	const value = useContext(React.createContext({ foo: 'bar' }));
@@ -25,8 +25,7 @@ function Main(props) {
 			function FuncGetMovies() {
 				getStudents()
 					.then((json) => {
-						// setDataStudents(json);
-						props.setStudent(json);
+						setDataStudents(json);
 					})
 					.catch((error) => console.log(error));
 
@@ -50,8 +49,8 @@ function Main(props) {
 	function handleAddStudent() {
 		postStudents(name, age)
 			.then((json) => {
-				console.log(json);
-				// setDataStudents(dataStudents.concat(json));
+				// console.log(json);
+				setDataStudents(dataStudents.concat(json));
 			})
 			.catch((error) => console.log(error));
 	}
@@ -73,8 +72,8 @@ function Main(props) {
 						<h1>{t('Hello')}</h1>
 						<button onClick={handleChangeLanguageEN}>english</button>
 						<button onClick={handleChangeLanguageVn}>vietnamese</button>
-						{props.StudentReducer != null ? (
-							props.StudentReducer.map((e) => (
+						{dataStudents != null ? (
+							dataStudents.map((e) => (
 								<div key={e.id}>
 									<h5>{e.name}</h5>
 									<h5>{e.age}</h5>
@@ -94,7 +93,7 @@ function Main(props) {
 
 						<button onClick={handleAddStudent}>Add Student</button>
 					</div>
-					{CheckDataMenu ? <Menu /> : <div />}
+					{props.CheckMenuReducer ? <Menu /> : <div />}
 				</div>
 
 				<Footer />
@@ -105,7 +104,8 @@ function Main(props) {
 
 function mapStateToProps(state) {
 	return {
-		StudentReducer: state.StudentReducer
+		StudentReducer: state.StudentReducer,
+		CheckMenuReducer: state.CheckMenuReducer
 	};
 }
-export default connect(mapStateToProps, { setStudent })(Main);
+export default connect(mapStateToProps)(Main);

@@ -3,9 +3,10 @@ import Modal from 'react-modal';
 import './Header.scss';
 import icMenu from '../../../Assets/Images/icMenu.png';
 import HTML from './HTML/HTML';
+import { setCheckMenu } from '../../../config/Redux/ActionCreators';
+import { connect } from 'react-redux';
 
 function Header(props) {
-	const { handleMenu } = props;
 	const [ modalIsOpen, setModalIsOpen ] = useState(false);
 
 	const handleCloseHTMLView = () => {
@@ -13,6 +14,9 @@ function Header(props) {
 	};
 	const HandleOpenHTMLView = () => {
 		setModalIsOpen(true);
+	};
+	const handleCheckMenu = () => {
+		props.setCheckMenu();
 	};
 
 	return (
@@ -36,7 +40,7 @@ function Header(props) {
 			</div>
 			<div />
 			<div className="header-right-wrapper">
-				<h1 className="style-text-header-right" onClick={handleMenu}>
+				<h1 className="style-text-header-right" onClick={handleCheckMenu}>
 					<img src={icMenu} alt="Menu" className="image-header-wrapper" />
 				</h1>
 			</div>
@@ -47,4 +51,4 @@ function Header(props) {
 	);
 }
 
-export default Header;
+export default connect(null, { setCheckMenu })(Header);

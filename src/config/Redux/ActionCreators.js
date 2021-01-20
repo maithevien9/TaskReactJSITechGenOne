@@ -4,3 +4,8 @@ export function setStudent(arrStudent) {
 		data: arrStudent
 	};
 }
+export function setCheckMenu() {
+	return {
+		type: 'setCheckMenu'
+	};
+}
