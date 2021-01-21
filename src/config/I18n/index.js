@@ -1,24 +1,18 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import en from './en';
-import vn from './vn';
+import data_en from '../../Assets/Translation/en/en.json';
+import data_vn from '../../Assets/Translation/vn/vn.json';
 
 const resources = {
-	en,
-	vn
+	en: data_en.en,
+	vn: data_vn.vn
 };
 
 i18n
 	.use(initReactI18next) // passes i18n down to react-i18next
 	.init({
 		resources,
-		lng: 'vn',
-
-		keySeparator: false, // we do not use keys in form messages.welcome
-
-		interpolation: {
-			escapeValue: false // react already safes from xss
-		}
+		lng: 'vn'
 	});
 
 export default i18n;
