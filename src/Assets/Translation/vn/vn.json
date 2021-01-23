@@ -1,7 +1,10 @@
 {
 	"vn": {
 		"translation": {
-			"Hello": "xin chao React"
+			"Hello": "xin chao React",
+			"Home":{
+					"title" : "Home"
+			}
 		}
 	}
 }

@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 function Main(props) {
 	const { t, i18n } = useTranslation();
 	const [ name, setName ] = useState('');
-	const [ age, setAge ] = useState('');
+	const [ age, setAge ] = useState();
 	const value = useContext(React.createContext({ foo: 'bar' }));
 
 	const [listStudent, setListStudent] = useState([]);
@@ -20,8 +20,10 @@ function Main(props) {
 		() => {
 			getStudents();
 		},
-		[listStudent]
+		[]
 	);
+
+	
 
 	function getStudents() {
 		StudentService.getStudents().then((res) => {
